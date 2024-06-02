@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webapp',
     'login'
-    'galeria',
 ]
 
 MIDDLEWARE = [
