@@ -12,7 +12,20 @@ class Vregistro(View):
     
     def get(self, request):
         form = UserCreationForm()
-        return render(request, 'registro/registro.html')
+        return render(request, 'registro/registro.html',{'form': form})
     
     def post(self, request):
-        pass
+        form = UserCreationForm(request.POST) #almaceno la informacion del formulario
+        if form.is_valid():
+            
+            usuario = form.save() #guarda la info en la base de datos
+            
+            login(request, usuario) #logea al usuario con la informacion llenada
+            
+            return redirect('inicio')
+        else:
+            for msg in form.error_messages:                      
+                messages.error(request,form.error_messages[msg])    #mostramos los errores que se almacenaron
+                
+            return render(request, 'registro/registro.html', {'form':form})        
+            

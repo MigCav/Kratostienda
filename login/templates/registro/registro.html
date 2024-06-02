@@ -5,7 +5,18 @@
 
 {% block content %}
 
-    <p>realizando prueba de pag</p>
+    <div style="width: 80%; margin: auto; color: white; text-shadow: 0.5px 0px 0px black; ">
 
+        <form method="post" action="">
+
+            {% csrf_token %}
+
+            {{ form }}
+
+        <button type="submit" class="btn btn-success">Registrate</button>
+        </form>
+       
+
+    </div>
 
 {% endblock %}
