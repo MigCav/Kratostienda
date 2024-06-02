@@ -19,12 +19,12 @@
       background-image: url('static/webapp/prueba.jpg');
       background-size: cover; /* Ajusta la imagen al tamaño del cuerpo */
       background-repeat: no-repeat; /* Evita que la imagen se repita */
-      min-height: 100vh;
+      
   }
 </style>
-<body class="bg-image">
-
-    <!--barra de navegacion-->
+<body>
+  <!--barra de navegacion-->
+  <div class="body">
     <nav class="navbar navbar-expand-md bg-black" data-bs-theme="dark" style="background-color: transparent !important; width: 80%; margin: auto;" >
       <div class="container-fluid" >
       <a class="navbar-brand" style="font-size: 1.17cm; font-family: fantasy;" href="#">KRATOS TIENDA</a>
@@ -54,9 +54,17 @@
   {% block content%}
   <a style="color: white;"> probando</a>
   {% endblock %}
+
+  <!--footer-->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   </div>
   
-  <div class="container-fluid"style="color: white; width: 80%;">
+  <div class="container-fluid; mi-div" style="color: white; width: 80%; margin: auto;">
 
       <div class="row" style="text-align: center;">
 
@@ -91,8 +99,15 @@
   </div>
   
 
+  <style>
+    .mi-div {
+        border: 2px solid #ffffff;
+        padding: 10px; /* Opcional: añade un espacio interno al div */      
+    }
+</style>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</div>
 </body>
 </html>

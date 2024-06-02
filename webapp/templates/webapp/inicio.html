@@ -1,20 +1,47 @@
 {% extends "webapp/plantilla_padre.html" %}
 
+{% load static %}
 
 
 {% block content %}
 
-    <div style="border: 5px;">
+    <div class="row" >
 
-        <div class="col" style="text-align: center;">
-            <a style="color: white;">probando si se ve el texto con letra negra</a>
+        <div class="col" style="text-align: center; margin-top: auto; margin-bottom: auto; font-size: 1.7vw;background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */; border-radius: 50%;">
+            <p>.     .      .</p>
+            <a style="color: white; ">Nuestra ropa deportiva combina estilo y funcionalidad. Desde las pistas hasta el gimnasio, te acompañamos en cada paso</a>
+            <p>.     .      .</p>
         </div>
 
-        <div class="col">
+        <div class="col" style="text-align: center; ">
             
+            <img src="static/webapp/Versatilidad.jpg" class="img-fluid" alt="..." width="250px" style="opacity: 0.90; border-radius: 2%;">
+
+        </div>
+
+       
+        
+
+        <div class="row">
+
+
+            <div class="col" style="text-align: center; ">
+            
+                <img src="static/webapp/modelo.jpg" class="img-fluid" alt="..." width="250px" style="border-radius: 2%; opacity: 0.9;">
+    
+            </div>
+
+
+            <div class="col" style="text-align: center; margin-top: auto; margin-bottom: auto; font-size: 1.7vw;background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */; border-radius: 50%;">
+                <p>.     .      .</p>
+                <a style="color: white; "> Desde leggings de alto rendimiento hasta tops transpirables, tenemos todo lo que necesitas para entrenar con estilo y comodidad</a>
+                <p>.     .      .</p>
+
+
         </div>
 
 
     </div>
+<br><br><br><br><br><br>
 
 {% endblock %}
