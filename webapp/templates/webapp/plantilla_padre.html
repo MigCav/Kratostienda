@@ -8,7 +8,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+      {% block title %}
+      
+      {% endblock %}
+    </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     
@@ -16,7 +20,7 @@
 </head>
 <style>
   body {
-      background-image: url('static/webapp/prueba.jpg');
+      background-image: url("{% static 'webapp/prueba.jpg' %}");
       background-size: cover; /* Ajusta la imagen al tamaño del cuerpo */
       background-repeat: no-repeat; /* Evita que la imagen se repita */
       
@@ -37,7 +41,7 @@
               <a class="nav-link active" aria-current="page" href="#" style="font-size: 0.7cm;" >Inicio</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="{% url 'registro' %}" style="font-size: 0.6cm;">Tienda</a>
+              <a class="nav-link" href="{% url 'registro' %}" style="font-size: 0.6cm;">Registro</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#" style="font-size: 0.6cm;">Contacto</a>
