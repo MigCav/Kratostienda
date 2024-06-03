@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+  
 
   {% load static %}
     
@@ -14,7 +15,7 @@
       {% endblock %}
     </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    
     
 
 </head>
@@ -31,7 +32,7 @@
   <div class="body">
     <nav class="navbar navbar-expand-md bg-black" data-bs-theme="dark" style="background-color: transparent !important; width: 80%; margin: auto;" >
       <div class="container-fluid" >
-      <a class="navbar-brand" style="font-size: 1.17cm; font-family: fantasy;" href="#">KRATOS TIENDA</a>
+      <a class="navbar-brand" style="font-size: 1.17cm; font-family: fantasy;">KRATOS TIENDA</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
@@ -55,8 +56,19 @@
   </nav>
 
   <div style="width: 80%; margin: auto;">
+    <div style="text-align: right;"><!-- barra de log-->
+    {% if user.is_authenticated %}
+
+      <span style="color: #9a9797;">Hola {{ user.username }}</span> &nbsp;&nbsp;&nbsp; <a href="{% url 'cerrar_sesion' %}" style="color: white;">Cerrar sesion</a>
+    
+    {% else %}
+      <a href="{% url 'logear' %}" style="color: #9a9797;">Iniciar sesion</a>
+    {% endif %} <!--termino de la barra-->
+    
+  </div>
+  <br>
   {% block content%}
-  <a style="color: white;"> probando</a>
+
   {% endblock %}
 
   <!--footer-->

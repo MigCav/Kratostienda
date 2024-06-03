@@ -28,4 +28,24 @@ class Vregistro(View):
                 messages.error(request,form.error_messages[msg])    #mostramos los errores que se almacenaron
                 
             return render(request, 'registro/registro.html', {'form':form})        
+           
+    
+def cerrar_sesion(request):
+    logout(request)
+    return redirect('inicio') 
+
+def logear(request):
+    if request.METHOD == "POST":
+        form = AuthenticationForm(request, data = request.POST) #guardamos la informacion recibida en la variable
+        if form.is_valid():
+            nombre_usuario = form.cleaned_data.get('username') #para obtener la informacion acertada del recuadro usename
+            contraseña = form.cleaned_data.get('password')
+            usuario = authenticate(username = nombre_usuario, password = contraseña)
             
+            if usuario is not None:         #si la informacion no es nula logea al usuario
+                login(request, usuario)
+                return redirect('home')
+            
+        
+    form = AuthenticationForm()
+    return render(request, 'logear/logear.html', {'form':form})

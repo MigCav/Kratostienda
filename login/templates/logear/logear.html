@@ -1,0 +1,15 @@
+{% extends 'webapp/plantilla_padre.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div style="width: 40%; margin: auto; color: white; text-shadow: 0.5px 0px 0px black; ">
+
+    {% csrf_token %}
+
+    {{ form| crispy }}
+    
+    <button type="submit" class="btn btn-success">Iniciar sesion</button>
+</div>
+<br><br><br><br><br><br><br>
+{% endblock %}
