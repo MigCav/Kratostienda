@@ -1,16 +1,17 @@
 {% extends 'webapp/plantilla_padre.html' %}
 
+
 {% block content %}
 
+    
 <div class="row">
 
-    {% for item in producto %}
+    {% for item in productos_filtrados %}
 
         <div class="col-md-4" style="padding-top: 8px;">
             <div class="card" style="width: 16rem; background-color: rgb(43, 43, 43);opacity: 0.9; height: 460px;">
-                <div style="text-align: center;"><img src="{{item.imagen.url}}" class="card-img-top" alt="..." style="width: 150px; height: 220px;">
-                </div>
-                    <div class="card-body" style="text-align: center; color: white;">
+                <div style="text-align: center;"><img src="{{item.imagen.url}}" class="card-img-top" alt="..." style="width: 150px; height: 220px;"></div>
+                <div class="card-body" style="text-align: center; color: white;">
                 <h5 class="card-title">{{ item.nombre}}</h5>
                 <p class="card-text te">{{item.codigo}}</p>
                 <p class="card-text">{{ item.precio }}$</p>
@@ -32,12 +33,13 @@
 
     
     {% endfor %}
+
 </div>
 <br>
 <div style="text-align: center; color: white;">
 
-    <u>Categorias: &nbsp;
-        {% for cat in categoria %}
+    <u>Categorias: &nbsp; <a href="{% url 'tienda' %}" style="color: white;">-Inicio-</a> &nbsp;
+        {% for cat in categorias %}
 
         <a href="{% url 'categoriaf' cat.id %}" style="color: white; text-transform: capitalize;">-{{cat.nombre}}-</a> &nbsp;
 
@@ -45,4 +47,8 @@
     </u>
 
 </div>
+
+
+</div>
+
 {% endblock %}
