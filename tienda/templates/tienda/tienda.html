@@ -1,0 +1,47 @@
+{% extends 'webapp/plantilla_padre.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    {% for item in producto %}
+
+        <div class="col-md-4" style="padding-top: 8px;">
+            <div class="card" style="width: 16rem; background-color: rgb(43, 43, 43);opacity: 0.9; height: 460px;">
+                <div style="text-align: center;"><img src="{{item.imagen.url}}" class="card-img-top" alt="..." style="width: 150px; height: 220px;"></div>
+                <div class="card-body" style="text-align: center; color: white;">
+                <h5 class="card-title">{{ item.nombre}}</h5>
+                <p class="card-text te">{{item.codigo}}</p>
+                <p class="card-text">{{ item.precio }}$</p>
+                {% if disponibilidad == true %}
+                    <p>Disponible</p>
+
+                {% else %}
+
+                    <p>No disponible</p>
+
+                {% endif %}
+
+                <a href="#" class="btn btn-success">agregar al carrito en futuro</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    
+    {% endfor %}
+</div>
+<br>
+<div style="text-align: center; color: white;">
+
+    <u>Categorias: &nbsp;
+        {% for cat in categoria %}
+
+        <a href="#" style="color: white; text-transform: capitalize;">-{{cat.nombre}}-</a> &nbsp;
+
+        {% endfor %}
+    </u>
+
+</div>
+{% endblock %}

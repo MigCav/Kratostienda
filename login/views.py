@@ -35,7 +35,7 @@ def cerrar_sesion(request):
     return redirect('inicio') 
 
 def logear(request):
-    if request.METHOD == "POST":
+    if request.method == "POST":
         form = AuthenticationForm(request, data = request.POST) #guardamos la informacion recibida en la variable
         if form.is_valid():
             nombre_usuario = form.cleaned_data.get('username') #para obtener la informacion acertada del recuadro usename
@@ -44,7 +44,7 @@ def logear(request):
             
             if usuario is not None:         #si la informacion no es nula logea al usuario
                 login(request, usuario)
-                return redirect('home')
+                return redirect('inicio')
             
         
     form = AuthenticationForm()
