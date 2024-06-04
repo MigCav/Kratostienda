@@ -8,7 +8,8 @@
 
         <div class="col-md-4" style="padding-top: 8px;">
             <div class="card" style="width: 16rem; background-color: rgb(43, 43, 43);opacity: 0.9; height: 460px;">
-                <div style="text-align: center;"><img src="{{item.imagen.url}}" class="card-img-top" alt="..." style="width: 150px; height: 220px;"></div>
+                <div style="text-align: center;"><img src="{{item.imagen.url}}" class="card-img-top" alt="..." style="width: 150px; height: 220px;">
+                    {{ item.mug_shot.url }}</div>
                 <div class="card-body" style="text-align: center; color: white;">
                 <h5 class="card-title">{{ item.nombre}}</h5>
                 <p class="card-text te">{{item.codigo}}</p>
