@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as mensajes_de_error
 import os
+from . import secret
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,10 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-qlcyg3f$vb)89rxq(4%l9($_w4c7$cbv_p9v6!$p)2uri8+f!b'
+SECRET_KEY = secret
+#django-insecure-qlcyg3f$vb)89rxq(4%l9($_w4c7$cbv_p9v6!$p)2uri8+f!b
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
