@@ -10,8 +10,8 @@ class Carro:
         if not carro:
             carro = self.session['carro'] = {}
             
-        else:
-            self.carro = carro
+        #else:
+        self.carro = carro
             
     def agregar(self, producto):
         
@@ -19,11 +19,12 @@ class Carro:
         if (str(producto.id) not in self.carro.keys()):
             
             self.carro[producto.id] = {
-                'poducto_id'    :   producto.id,
+                'producto_id'   :   producto.id,
                 'codigo'        :   producto.codigo,
                 'precio'        :   producto.precio,
                 'cantidad'      :   1,
-                'imagen'        :   producto.imagen.url
+                'imagen'        :   producto.imagen.url,
+                'nombre'        :   producto.nombre,
             }
         else:
             for key,value in self.carro.items():
