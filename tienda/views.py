@@ -16,3 +16,4 @@ def categoriaf(request, categorias_id):                                  # recib
     categorias = Categoria.objects.all()
     
     return render(request, 'tienda/categorias.html', {'categoria_tienda' : categoria_tienda, 'productos_filtrados' : productosf, 'categorias' : categorias})
+

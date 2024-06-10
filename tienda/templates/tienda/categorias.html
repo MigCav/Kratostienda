@@ -23,7 +23,7 @@
 
                 {% endif %}
 
-                <a href="#" class="btn btn-success">agregar al carrito en futuro</a>
+                <a href="{% url 'carro:agregar' item.id %}" class="btn btn-success">Agregar al carro</a>
                 </div>
 
             </div>
